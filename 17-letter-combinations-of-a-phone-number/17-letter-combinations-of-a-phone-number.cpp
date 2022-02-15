@@ -2,7 +2,8 @@ class Solution {
 public:
     vector<string> letterCombinations(string digits) {
         vector <string> result;
-        if(digits.length() == 0) return result;
+        int digit_len = digits.length();
+        if(digit_len == 0) return result;
         
         unordered_map<char, string> digit_to_chars;
         
@@ -25,7 +26,7 @@ public:
             result.push_back(s);
         }
         
-        for(int i=1; i<digits.length(); i++){
+        for(int i=1; i<digit_len; i++){
             chars = digit_to_chars[digits[i]];
             result = cartesian_product(result, chars);
         }
@@ -36,9 +37,11 @@ public:
     
     vector<string> cartesian_product(vector<string> set_a, string set_b){
         vector<string> result;
+        int a_len = set_a.size();
+        int b_len = set_b.length();
         
-        for(auto i=0; i < set_a.size(); i++){
-            for(auto j=0; j < set_b.length(); j++){
+        for(auto i=0; i < a_len; i++){
+            for(auto j=0; j < b_len; j++){
                 string s;
                 s += set_a[i];
                 s += set_b[j];
