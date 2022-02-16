@@ -15,7 +15,7 @@ public:
         
         for(auto item=map.begin(); item!=map.end(); item++)
             result.push_back(item->second);
-        
+          
         return result;
     }
 };
