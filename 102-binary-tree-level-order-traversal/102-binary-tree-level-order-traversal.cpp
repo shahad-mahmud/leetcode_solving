@@ -16,7 +16,7 @@ public:
         vector<int> level;
         queue<pair<TreeNode*, int>> q;
         pair<TreeNode*, int> head_pair;
-        TreeNode* head;  
+        TreeNode* head;
         
         q.push(make_pair(root, 0));
         int prev_level = 0;
@@ -26,7 +26,8 @@ public:
             head = head_pair.first;
             q.pop();
             
-            if(head == nullptr) continue;
+            if(head == nullptr) 
+                continue;
             
             q.push(make_pair(head -> left, head_pair.second + 1));
             q.push(make_pair(head -> right, head_pair.second + 1));
