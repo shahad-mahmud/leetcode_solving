@@ -25,7 +25,6 @@ public:
             
             if(head == nullptr) continue;
             
-            // cout << head -> val << " ";
             q.push(make_pair(head -> left, head_pair.second + 1));
             q.push(make_pair(head -> right, head_pair.second + 1));
             
