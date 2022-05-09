@@ -16,7 +16,7 @@ public:
         vector<int> level;
         queue<pair<TreeNode*, int>> q;
         pair<TreeNode*, int> head_pair;
-        TreeNode* head;
+        TreeNode* head;  
         
         q.push(make_pair(root, 0));
         int prev_level = 0;
