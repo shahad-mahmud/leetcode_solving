@@ -16,13 +16,14 @@ public:
         vector<int> level;
         queue<pair<TreeNode*, int>> q;
         pair<TreeNode*, int> head_pair;
+        TreeNode* head;
         
         q.push(make_pair(root, 0));
         int prev_level = 0;
         
         while(!q.empty()){
             head_pair = q.front();
-            TreeNode* head = head_pair.first;
+            head = head_pair.first;
             q.pop();
             
             if(head == nullptr) continue;
