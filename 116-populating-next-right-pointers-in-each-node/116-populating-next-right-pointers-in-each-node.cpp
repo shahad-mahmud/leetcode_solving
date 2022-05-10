@@ -33,7 +33,6 @@ public:
             
             if(head_node == NULL) continue;
             
-            cout << head_node -> val << " ";
             q.push(make_pair(head_node -> left, head.second + 1));
             q.push(make_pair(head_node -> right, head.second + 1));
             
