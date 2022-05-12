@@ -14,6 +14,7 @@ public:
     vector<int> rightSideView(TreeNode* root) {
         vector <int> result;
         queue<pair<TreeNode*, int>> q;
+        pair<TreeNode*, int> head_pair;
         TreeNode* head;
         
         if(root != nullptr)
@@ -21,20 +22,21 @@ public:
         int current_level = -1;
         
         while(!q.empty()){
-            head = q.front().first;
+            head_pair = q.front();
+            head = head_pair.first;
+            q.pop();
             
-            if(q.front().second != current_level){
+            if(head_pair.second != current_level){
                 result.push_back(head->val);
                 current_level += 1;
             }
             
             if(head->right != nullptr){
-                q.push(make_pair(head->right, q.front().second + 1));
+                q.push(make_pair(head->right, head_pair.second + 1));
             }
             if(head->left != nullptr){
-                q.push(make_pair(head->left, q.front().second + 1));
+                q.push(make_pair(head->left, head_pair.second + 1));
             }
-            q.pop();
         }
         
         return result;
