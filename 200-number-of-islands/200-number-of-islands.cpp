@@ -28,7 +28,8 @@ public:
             j = front.second;
             
             if(i <0 || j <0 || i >= rows || j >= columns || flags[i][j]) continue;
-            if(grid[i][j] == '0') continue;
+            if(grid[i][j] == '0') 
+                continue;
             
             flags[i][j] = true;
             
