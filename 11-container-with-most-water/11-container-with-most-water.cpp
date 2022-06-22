@@ -4,6 +4,7 @@ public:
         if (a<b) return a;
         return b;
     }
+    
     int maxArea(vector<int>& height) {
         int len = height.size();
         long long res = -1, area;
