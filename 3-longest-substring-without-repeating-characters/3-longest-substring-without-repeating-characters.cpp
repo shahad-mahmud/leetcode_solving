@@ -11,9 +11,7 @@ public:
                 tmp=p2-p1+1;
             }
             else {
-                
                 tmp++;
-                
             }
             m[s[p2]] = p2 + 1;
             p2++;
