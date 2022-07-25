@@ -5,19 +5,18 @@ public:
         unordered_map<char,int>m;
         
         while(p2 < l){
-            m[s[p2]]++;
-            
-            if(m[s[p2]] > 1){
-                p1++;
-                p2=p1;
-                m.clear();
+            if(m[s[p2]] > 0 && m[s[p2]] > p1){
+                p1=m[s[p2]];
                 if(tmp > res) res=tmp;
-                tmp=0;
+                tmp=p2-p1+1;
             }
             else {
+                
                 tmp++;
-                p2++;
+                
             }
+            m[s[p2]] = p2 + 1;
+            p2++;
         }
         if(tmp > res) res=tmp;
         
