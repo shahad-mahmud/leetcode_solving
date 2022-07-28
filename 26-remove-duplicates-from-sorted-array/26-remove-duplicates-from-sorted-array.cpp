@@ -7,7 +7,7 @@ public:
         for(int i=0;i<len;i++){
             m[nums[i]]++;
             
-            if(m[nums[i]]==1){
+            if(m[nums[i]] == 1){
                 nums[last_unique_index]=nums[i];
                 last_unique_index++;
             }
