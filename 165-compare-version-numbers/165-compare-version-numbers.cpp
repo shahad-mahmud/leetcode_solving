@@ -18,7 +18,7 @@ public:
             }
             
             if(temp1>temp2) return 1;
-            if(temp1<temp2) return -1;
+            else if(temp1<temp2) return -1;
             
             i++, j++;
         }
