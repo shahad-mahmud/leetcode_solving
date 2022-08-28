@@ -4,10 +4,8 @@ public:
         int i=0,j=0;
         int l1=v1.length(), l2=v2.length();
         
-        long temp1=0, temp2=0;
-        
         while(i<l1 || j<l2){
-            temp1=temp2=0;
+            long temp1=0, temp2=0;
             
             while(i<l1 && v1[i]!='.'){
                 temp1 += temp1 * 10 + (v1[i]-'0');
