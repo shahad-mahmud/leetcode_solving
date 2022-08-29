@@ -16,7 +16,6 @@ class Solution:
                     break
                 l+=1
                 i+=1
-                
             longest_seq[n]=l
             res=max(res, l)
         return res
