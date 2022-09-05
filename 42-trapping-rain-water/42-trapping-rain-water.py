@@ -1,6 +1,7 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
         res=0
+        
         lp, rp=0, len(height)-1
         left_max, right_max=height[lp],height[rp]
         
