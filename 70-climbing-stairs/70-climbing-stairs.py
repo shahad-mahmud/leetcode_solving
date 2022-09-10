@@ -1,11 +1,9 @@
 class Solution:
-    dp=[-1 for _ in range(46)]
-    dp[0]=1
-    
     def climbStairs(self, n: int) -> int:
-        if n<0: return 0        
-        if self.dp[n] >=0: return self.dp[n]
+        dp=[0,1,2]
         
-        self.dp[n] = self.climbStairs(n-1) + self.climbStairs(n-2)
-        return self.dp[n]
+        for i in range(3, n+1):
+            dp.append(dp[i-1]+dp[i-2])
+        
+        return dp[n]
         
