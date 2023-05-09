@@ -1,46 +1,29 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         rows, cols = len(matrix), len(matrix[0])
-        r, c = 0, 0
-        turn = 0
-        res = []
+        left, right, top, bottom = 0, cols, 0, rows
         
-        for _ in range(rows*cols):
-            res.append(matrix[r][c])
+        res = []
+        while left<right and top<bottom:
+            for i in range(left, right):
+                res.append(matrix[top][i])
+            top+=1
             
-            if turn == 0:
-                c+=1
-                
-                if c==cols:
-                    turn = 1
-                    cols -= 1
-                    c-=1
-                    r+=1
-            elif turn == 1:
-                r+=1
-                
-                if r==rows:
-                    turn = 2
-                    rows -= 1
-                    r -= 1
-                    c = cols - 1
-            elif turn == 2:
-                c -= 1
-                
-                if c == len(matrix[0]) - cols - 2:
-                    turn = 3
-                    r -= 1
-                    c += 1
-                    # print(2, r, c)
-            elif turn == 3:
-                r-=1
-                
-                if r == len(matrix) - rows - 1:
-                    # print('KKK', r, c)
-                    turn = 0
-                    c += 1
-                    r += 1
-                    # print(3, r, c)
+            print(left, right, top, bottom)
+            for i in range(top, bottom):
+                res.append(matrix[i][right-1])
+            right-=1
+            
+            if not (left < right and top < bottom):
+                break
+            
+            for i in range(right-1, left-1, -1):
+                res.append(matrix[bottom-1][i])
+            bottom-=1
+            
+            for i in range(bottom-1, top-1, -1):
+                res.append(matrix[i][left])
+            left+=1
         
         return res
                     
